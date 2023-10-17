@@ -59,7 +59,6 @@
     margin: 0;
     padding: 0;
   }
-
   .container {
     background-color: #21d4fd;
     background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
@@ -68,47 +67,5 @@
     justify-content: center;
     align-items: center;
     height: 50vh;
-  }
-  .hoverme {
-    width: 240px;
-    text-align: center;
-    padding: 10px 0;
-    cursor: pointer;
-    position: relative;
-    h1 {
-      color: #fff;
-      font-size: 1.5em;
-    }
-    i {
-      position: absolute;
-      display: block;
-      left: 50%;
-      top: 0;
-      width: 5px;
-      height: 10px;
-      background: red;
-      opacity: 0;
-    }
-    &:hover {
-      @for $i from 1 through 50 {
-        i:nth-of-type(#{$i}) {
-          transform: translate3d(
-              random(190) - 100 + px,
-              random(200) - 100 + px,
-              0
-            )
-            rotate(random(360) + deg);
-          background: hsla(random(360), 100%, 50%, 1);
-          animation: bang 700ms ease-out forwards;
-          opacity: 0;
-        }
-      }
-    }
-  }
-  @keyframes bang {
-    from {
-      transform: translate3d(0, 0, 0);
-      opacity: 1;
-    }
   }
 </style>
