@@ -1,2 +1,3 @@
-# bday-site
-A website to wish Happy Birthday with to someone.
+# Birthday website
+
+Website to wish Happy Birthay
