@@ -60,12 +60,10 @@
     padding: 0;
   }
   .container {
-    background-color: #21d4fd;
-    background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
     font-family: Helvetica, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 90vh;
   }
 </style>
