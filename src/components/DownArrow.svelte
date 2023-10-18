@@ -34,13 +34,11 @@
   /* Markup */
 
   .container {
-    padding: 20px;
+    padding-bottom: 10vh;
     text-align: center;
   }
 
   .content {
-    transform: translate(-50%, -50%);
-
     h1 {
       margin: 0 0 20px;
       color: #fff;
