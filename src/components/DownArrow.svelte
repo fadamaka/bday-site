@@ -34,7 +34,7 @@
   /* Markup */
 
   .container {
-    padding-bottom: 10vh;
+    padding-bottom: 25vh;
     text-align: center;
   }
 
