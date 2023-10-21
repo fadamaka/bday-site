@@ -4,6 +4,8 @@
   import GiftBox from "../components/GiftBox.svelte";
   import { Confetti } from "svelte-confetti";
   import { onMount } from "svelte";
+  import Carousel from "svelte-carousel";
+  import { browser } from "$app/environment";
 
   onMount(disableScroll);
   onMount(enableScroll);
@@ -117,15 +119,21 @@
       <DownArrow handleClick={scrollIntoView} href="#gifts" />
     </nav>
   </section>
-  <section id="gifts">
-    <GiftBox />
+  <section id="gifts" class="gifts">
+    {#if browser}
+      <Carousel>
+        <GiftBox />
+        <GiftBox />
+        <GiftBox />
+      </Carousel>
+    {/if}
   </section>
 </main>
 
 <style>
   :global(body) {
     background-color: #21d4fd;
-    background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+    background-image: linear-gradient(19deg, #1b4e5a 0%, #6d1f91 100%);
     font-family: Helvetica, sans-serif;
     height: 100vh;
     margin: 0;
@@ -145,6 +153,11 @@
   }
   section {
     min-height: 100vh;
+  }
+  .gifts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   :root {
     --vis: hidden;
