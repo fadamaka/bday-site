@@ -1,25 +1,15 @@
-<div class="container">
-  <div class="popup" id="popup">
-    <div class="popup-inner">
-      <div class="popup__photo">
-        <img
-          src="https://images.unsplash.com/photo-1515224526905-51c7d77c7bb8?ixlib=rb-0.3.5&s=9980646201037d28700d826b1bd096c4&auto=format&fit=crop&w=700&q=80"
-          alt=""
-        />
-      </div>
-      <div class="popup__text">
-        <h1>Lorem ipsum dolor sit amet</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ex
-          velit, viverra non vulputate vitae, blandit vitae nisl. Nullam
-          fermentum orci et erat viverra bibendum. Aliquam sed varius nibh,
-          vitae mattis purus. Mauris elementum sapien non ullamcorper vulputate.
-          Orci varius natoque penatibus et magnis dis parturient montes,
-          nascetur ridiculus mus. Sed eget felis sit amet eros viverra pulvinar.
-        </p>
-      </div>
-      <a class="popup__close" href="#gifts">X</a>
+<div class="popup" id="ytvideo">
+  <div class="popup-inner">
+    <div class="popup__photo">
+      <iframe
+        src="https://www.youtube.com/embed/AfRyM57Ky2s?si=EqgmypKBFucYFM1j"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      />
     </div>
+    <a class="popup__close" href="#gifts">X</a>
   </div>
 </div>
 
@@ -38,7 +28,7 @@
     font-size: 16px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 80vh) {
     html,
     body {
       font-size: 12px;
@@ -75,8 +65,7 @@
     height: 100vh;
     bottom: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 2;
+    background-color: rgba(37, 29, 63, 0.897);
     visibility: hidden;
     opacity: 0;
     overflow: hiden;
@@ -86,45 +75,18 @@
       bottom: -100vw;
       right: -100vh;
       display: flex;
-      align-items: center;
-      max-width: 800px;
-      max-height: 600px;
-      width: 60%;
-      height: 80%;
-      background-color: #fff;
       transform: rotate(32deg);
       transition: 0.64s ease-in-out;
+      align-items: center;
     }
     &__photo {
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-      width: 40%;
-      height: 100%;
+      display: block;
+      justify-content: flex;
+      align-items: flex;
       overflow: hidden;
-      img {
-        width: auto;
-        height: 100%;
-      }
-    }
-    &__text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 60%;
-      height: 100%;
-      padding: 4rem;
-      h1 {
-        font-size: 2rem;
-        font-weight: 600;
-        margin-bottom: 2rem;
-        text-transform: uppercase;
-        color: #0a0a0a;
-      }
-      p {
-        font-size: 0.875rem;
-        color: #686868;
-        line-height: 1.5;
+      iframe {
+        width: 142vh;
+        height: 81vh;
       }
     }
     &:target {

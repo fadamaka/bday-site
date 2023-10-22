@@ -6,14 +6,13 @@
   import { onMount } from "svelte";
   import Carousel from "svelte-carousel";
   import { browser } from "$app/environment";
-  import Modal2 from "../components/Modal2.svelte";
-  import { writable } from "svelte/store";
-  import Modal from "svelte-simple-modal";
-  import Popup from "../components/Popup.svelte";
   import PlayOnClick from "../components/PlayOnClick.svelte";
+  import { goto } from "$app/navigation";
+  import ImageModal from "../components/ImageModal.svelte";
+  import YtModal from "../components/YtModal.svelte";
+  import TextModal from "../components/TextModal.svelte";
 
-  const modal = writable(null);
-  const showModal = () => modal.set(Popup);
+  export let array = {};
 
   onMount(disableScroll);
   onMount(enableScroll);
@@ -96,6 +95,17 @@
       }
     }, 11000);
   }
+
+  function giftClick(event, hrefTarget) {
+    if (!array[event.target.id]) {
+      setTimeout(() => {
+        window.location.replace(hrefTarget);
+        array[event.target.id] = true;
+      }, 4200);
+    } else {
+      window.location.replace(hrefTarget);
+    }
+  }
 </script>
 
 <main>
@@ -130,19 +140,55 @@
   <section id="gifts" class="gifts">
     {#if browser}
       <Carousel>
-        <button on:click={showModal}>Show modal</button>
-        <a class="button2" href="#popup"><img src="giftbox4.webp" alt="" /></a>
-        <GiftBox />
-        <PlayOnClick imgSrc="giftbox-firstframe.png" webpSrc="giftbox4.webp" />
+        <a
+          class="button2"
+          href="#popup"
+          on:click|preventDefault={(event) => {
+            giftClick(event, "#popup");
+          }}
+        >
+          <PlayOnClick
+            elementId="present1"
+            imgSrc="giftbox-firstframe.png"
+            webpSrc="giftbox4.webp"
+            giftSrc="modal.png"
+          /></a
+        >
+        <a
+          class="button2"
+          href="#wordcloud"
+          on:click|preventDefault={(event) => {
+            giftClick(event, "#wordcloud");
+          }}
+        >
+          <PlayOnClick
+            elementId="present2"
+            imgSrc="giftbox-firstframe.png"
+            webpSrc="giftbox4.webp"
+            giftSrc="result_v6.png"
+          /></a
+        >
+        <a
+          class="button2"
+          href="#ytvideo"
+          on:click|preventDefault={(event) => {
+            giftClick(event, "#ytvideo");
+          }}
+        >
+          <PlayOnClick
+            elementId="present3"
+            imgSrc="giftbox-firstframe.png"
+            webpSrc="giftbox4.webp"
+            giftSrc="video.png"
+          /></a
+        >
       </Carousel>
     {/if}
   </section>
-  <section>
-    <Modal show={$modal} />
-  </section>
-  <section>
-    <Modal2 />
-  </section>
+
+  <TextModal />
+  <ImageModal imgSrc="result_v6.png" />
+  <YtModal />
 </main>
 
 <style>
@@ -173,6 +219,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 25vh;
+    padding-right: 25vh;
   }
   /* .button2 {
     text-decoration: none;
@@ -186,6 +234,7 @@
     padding: 1rem 2rem;
   } */
   .button2 {
+    max-width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
