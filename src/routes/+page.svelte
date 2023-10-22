@@ -6,6 +6,14 @@
   import { onMount } from "svelte";
   import Carousel from "svelte-carousel";
   import { browser } from "$app/environment";
+  import Modal2 from "../components/Modal2.svelte";
+  import { writable } from "svelte/store";
+  import Modal from "svelte-simple-modal";
+  import Popup from "../components/Popup.svelte";
+  import PlayOnClick from "../components/PlayOnClick.svelte";
+
+  const modal = writable(null);
+  const showModal = () => modal.set(Popup);
 
   onMount(disableScroll);
   onMount(enableScroll);
@@ -122,11 +130,18 @@
   <section id="gifts" class="gifts">
     {#if browser}
       <Carousel>
+        <button on:click={showModal}>Show modal</button>
+        <a class="button2" href="#popup"><img src="giftbox4.webp" alt="" /></a>
         <GiftBox />
-        <GiftBox />
-        <GiftBox />
+        <PlayOnClick imgSrc="giftbox-firstframe.png" webpSrc="giftbox4.webp" />
       </Carousel>
     {/if}
+  </section>
+  <section>
+    <Modal show={$modal} />
+  </section>
+  <section>
+    <Modal2 />
   </section>
 </main>
 
@@ -155,6 +170,22 @@
     min-height: 100vh;
   }
   .gifts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* .button2 {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 1.5rem;
+    background-color: #fff;
+    color: #9191e9;
+    padding: 1rem 2rem;
+  } */
+  .button2 {
     display: flex;
     justify-content: center;
     align-items: center;
