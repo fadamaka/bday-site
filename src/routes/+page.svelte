@@ -1,13 +1,11 @@
 <script>
   import ConfettiHover from "../components/ConfettiHover.svelte";
   import DownArrow from "../components/DownArrow.svelte";
-  import GiftBox from "../components/GiftBox.svelte";
   import { Confetti } from "svelte-confetti";
   import { onMount } from "svelte";
   import Carousel from "svelte-carousel";
   import { browser } from "$app/environment";
   import PlayOnClick from "../components/PlayOnClick.svelte";
-  import { goto } from "$app/navigation";
   import ImageModal from "../components/ImageModal.svelte";
   import YtModal from "../components/YtModal.svelte";
   import TextModal from "../components/TextModal.svelte";
@@ -97,9 +95,11 @@
   }
 
   function giftClick(event, hrefTarget) {
+    // @ts-ignore
     if (!array[event.target.id]) {
       setTimeout(() => {
         window.location.replace(hrefTarget);
+        // @ts-ignore
         array[event.target.id] = true;
       }, 4200);
     } else {

@@ -20,38 +20,7 @@
     box-sizing: border-box;
   }
 
-  html,
-  body {
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-  }
-
   @media screen and (max-width: 80vh) {
-    html,
-    body {
-      font-size: 12px;
-    }
-  }
-
-  .container {
-    background-color: $main-color;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 80vh;
-  }
-
-  .button {
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    display: inline-block;
-    border-radius: 1.5rem;
-    background-color: #fff;
-    color: $main-color;
-    padding: 1rem 2rem;
   }
 
   .popup {
