@@ -2,7 +2,7 @@
   <div class="popup-inner">
     <div class="popup__photo">
       <iframe
-        src="https://www.youtube.com/embed/yG8HsJ881pU?si=a40-9fX8IIiSTKAa"
+        src="https://www.youtube.com/embed/JZyCpnAZWEM?si=en_tpD5kqE_ilr6C"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
