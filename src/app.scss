@@ -1,13 +1,13 @@
 /* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
 .hoverme {
-    width: 240px;
+    width: 70vh;
     text-align: center;
     padding: 10px 0;
     cursor: pointer;
     position: relative;
     h1 {
       color: #fff;
-      font-size: 1.5em;
+      font-size: 3em;
     }
     i {
       position: absolute;

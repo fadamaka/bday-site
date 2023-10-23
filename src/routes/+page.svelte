@@ -9,6 +9,7 @@
   import ImageModal from "../components/ImageModal.svelte";
   import YtModal from "../components/YtModal.svelte";
   import TextModal from "../components/TextModal.svelte";
+  import MusicModal from "../components/MusicModal.svelte";
 
   export let array = {};
 
@@ -94,6 +95,10 @@
     }, 11000);
   }
 
+  /**
+   * @param {MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement; }} event
+   * @param {string | URL} hrefTarget
+   */
   function giftClick(event, hrefTarget) {
     // @ts-ignore
     if (!array[event.target.id]) {
@@ -139,7 +144,7 @@
   </section>
   <section id="gifts" class="gifts">
     {#if browser}
-      <Carousel>
+      <Carousel infinite={false}>
         <a
           class="button2"
           href="#popup"
@@ -170,13 +175,27 @@
         >
         <a
           class="button2"
+          href="#music"
+          on:click|preventDefault={(event) => {
+            giftClick(event, "#music");
+          }}
+        >
+          <PlayOnClick
+            elementId="present3"
+            imgSrc="giftbox-firstframe.png"
+            webpSrc="giftbox4.webp"
+            giftSrc="music_modal.png"
+          /></a
+        >
+        <a
+          class="button2"
           href="#ytvideo"
           on:click|preventDefault={(event) => {
             giftClick(event, "#ytvideo");
           }}
         >
           <PlayOnClick
-            elementId="present3"
+            elementId="present4"
             imgSrc="giftbox-firstframe.png"
             webpSrc="giftbox4.webp"
             giftSrc="video.png"
@@ -189,6 +208,7 @@
   <TextModal />
   <ImageModal imgSrc="result_v6.png" />
   <YtModal />
+  <MusicModal />
 </main>
 
 <style>
