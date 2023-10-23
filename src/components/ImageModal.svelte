@@ -6,6 +6,7 @@
   <div class="popup-inner">
     <div class="popup__photo">
       <img src={imgSrc} alt="" />
+      * Based on Discord activity (#general, #tl-talk) from May 2023 to October 2023
     </div>
     <a class="popup__close" href="#gifts">X</a>
   </div>
@@ -54,6 +55,9 @@
       justify-content: flex;
       align-items: flex;
       overflow: hidden;
+      font-size: 0.7em;
+
+      color: #20162b;
       img {
         width: 100%;
         height: auto;
